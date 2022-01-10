@@ -1,0 +1,31 @@
+@page
+
+@{
+    var teams = new List<Team>();
+    teams.Add(new Team(1, "Barcelona"));
+    teams.Add(new Team(2, "Real Madrid"));
+    teams.Add(new Team(3, "Atletico de Madrid"));
+}
+<div class="row">
+    <div class="col">
+        <table clas="table">
+            <thead>
+                <tr>
+                    <th scope="col"># Registro</th>
+                    <th scope="col">Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var team in teams)
+                    {
+                        <tr>
+                            <td>#@team.Id</td>
+                            <td>@team.Name</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
